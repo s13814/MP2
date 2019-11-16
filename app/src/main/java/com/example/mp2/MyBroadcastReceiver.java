@@ -27,10 +27,11 @@ public class MyBroadcastReceiver extends BroadcastReceiver {
         String name = intent.getStringExtra("name");
         int price = intent.getIntExtra("price", 0);
 
-        /*Intent listIntent = new Intent();
-        listIntent.setComponent(new ComponentName("com.example.mp1", "com.example.mp1.ProductListActivity"));*/
+        Intent listIntent = new Intent(Intent.ACTION_MAIN);
+        //listIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        listIntent.setComponent(new ComponentName("com.example.mp1", "com.example.mp1.ProductListActivity"));
 
-        Intent listIntent = context.getPackageManager().getLaunchIntentForPackage("com.example.mp1");
+        //Intent listIntent = context.getPackageManager().getLaunchIntentForPackage("com.example.mp1");
 
         PendingIntent pIntent = PendingIntent.getActivity(context, 0, listIntent, 0);
 
