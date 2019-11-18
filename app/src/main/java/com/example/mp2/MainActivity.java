@@ -2,6 +2,7 @@ package com.example.mp2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.IntentFilter;
 import android.os.Bundle;
 
@@ -21,6 +22,4 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         registerReceiver(mbr, new IntentFilter(myIntent));
     }
-
-
 }
